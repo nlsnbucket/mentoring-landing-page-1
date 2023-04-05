@@ -25,16 +25,18 @@
         </p>
         <br />
         <br />
-        <form class="send-email-form" action="/subscribe" method="post">
+        <div class="send-email-form">
           <input
             class="email-input"
             type="email"
             placeholder="email"
             name="email"
-            id="email"
+            id="register-email-input"
           />
-          <button class="submit-button">Inscrever</button>
-        </form>
+          <button class="submit-button" id="register-email-button">
+            Inscrever
+          </button>
+        </div>
 
         <div class="opacity-3"></div>
       </div>
@@ -76,4 +78,6 @@
       </div>
     </section>
   </body>
+
+  <script src="index.js"></script>
 </html>

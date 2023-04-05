@@ -5,22 +5,24 @@ import { InsertEmailPropsZodSchema } from "../validation/InsertEmailPropsZodSche
 
 export class DefaultServer {
   constructor(
-    public readonly server: Express,
+    public readonly expressServer: Express,
     private readonly defaultRepository: DefaultRepository
   ) {}
 
   setup() {
+    this.expressServer.use(express.json())
+
     this.servePublic()
     this.serveRegisterEmailRoute()
     return this
   }
 
   private servePublic() {
-    this.server.use(express.static("public"))
+    this.expressServer.use(express.static("public"))
   }
 
   private serveRegisterEmailRoute() {
-    this.server.post(
+    this.expressServer.post(
       "/subscribe",
       InsertEmailMiddleware,
       async (request, response) => {
@@ -32,14 +34,26 @@ export class DefaultServer {
           email,
         })
 
-        const insertedRegisteredEmail =
-          await this.defaultRepository.insertEmail(insertEmailProps)
+        const existingEmail = await this.defaultRepository.find(email)
 
-        return response
-          .json({
+        if (existingEmail) {
+          return response.status(200).json({
+            email: existingEmail.value,
+          })
+        }
+
+        try {
+          const insertedRegisteredEmail =
+            await this.defaultRepository.insertEmail(insertEmailProps)
+
+          return response.status(200).json({
             email: insertedRegisteredEmail.value,
           })
-          .send()
+        } catch (error) {
+          return response.status(400).json({
+            error: "Failed to register email",
+          })
+        }
       }
     )
   }
