@@ -24,22 +24,32 @@ describe("DefaultServer", () => {
   })
 
   afterEach(async () => {
-    await prisma.registeredEmail.deleteMany({})
+    await prisma.subscriptionInterest.deleteMany({})
+    await prisma.subscriptionExperience.deleteMany({})
+    await prisma.experience.deleteMany({})
+    await prisma.interest.deleteMany({})
+    await prisma.subscription.deleteMany({})
   })
 
   describe("route subscribe", () => {
-    it("should insert email", async () => {
+    it("should create subscription with email only", async () => {
       const response = await request(server.expressServer)
         .post("/subscribe")
         .send({ email: "test@mail.com" })
         .expect(200)
 
       expect(response.body).toEqual({
-        email: "test@mail.com",
+        status: "created",
+        subscription: {
+          email: "test@mail.com",
+          comments: null,
+          experiences: [],
+          interests: [],
+        },
       })
     })
 
-    it("should reject exiting email", async () => {
+    it("should update email of exiting subscription", async () => {
       await request(server.expressServer)
         .post("/subscribe")
         .send({ email: "test@mail.com" })
@@ -48,7 +58,7 @@ describe("DefaultServer", () => {
       await request(server.expressServer)
         .post("/subscribe")
         .send({ email: "test@mail.com" })
-        .expect(400)
+        .expect(200)
     })
 
     it("should reject invalid email", async () => {
@@ -56,6 +66,46 @@ describe("DefaultServer", () => {
         .post("/subscribe")
         .send({ email: "test@mail" })
         .expect(400)
+    })
+
+    it("should create subcription with interests", async () => {
+      const response = await request(server.expressServer)
+        .post("/subscribe")
+        .send({
+          email: "test@mail.com",
+          interests: ["interest 1", "interest 2"],
+        })
+        .expect(200)
+
+      expect(response.body).toEqual({
+        status: "created",
+        subscription: {
+          email: "test@mail.com",
+          comments: null,
+          experiences: [],
+          interests: ["interest 1", "interest 2"],
+        },
+      })
+    })
+
+    it("should create subcription with experiences", async () => {
+      const response = await request(server.expressServer)
+        .post("/subscribe")
+        .send({
+          email: "test@mail.com",
+          experiences: ["experience 1", "experience 2"],
+        })
+        .expect(200)
+
+      expect(response.body).toEqual({
+        status: "created",
+        subscription: {
+          email: "test@mail.com",
+          comments: null,
+          experiences: ["experience 1", "experience 2"],
+          interests: [],
+        },
+      })
     })
   })
 })

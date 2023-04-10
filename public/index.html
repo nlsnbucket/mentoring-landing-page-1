@@ -3,65 +3,192 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>O Mentor Brasileiro</title>
     <link rel="icon" href="assets/favicon.png" />
     <link rel="stylesheet" href="index.css" />
-    <title>Mentor Brasileiro</title>
+
+    <!-- Fonts: Libre Baskerville from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body class="body">
-    <section class="full-width-section section-1-flex">
+    <!-- Header: navigation -->
+    <header class="header">
+      <nav class="nav">
+        <ul class="nav-item-list">
+          <li id="nav-item-head" class="nav-item">Topo</li>
+          <li class="nav-divisor"></li>
+          <li id="nav-item-mentor" class="nav-item">Sou Mentor</li>
+          <li class="nav-divisor"></li>
+          <li id="nav-item-mentored" class="nav-item">Procuro Mentor</li>
+          <li class="nav-divisor"></li>
+          <li id="nav-item-subscription" class="nav-item">Inscrição</li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Section: head content -->
+    <section
+      id="section-head"
+      class="full-width-section flex-column"
+      style="position: relative"
+    >
       <img
-        class="landing-page-image"
-        src="assets/mentoring-success.jpg"
+        class="background-image"
+        src="assets/mentoria-sketch.jpeg"
         alt="mentoring"
       />
+
+      <div style="height: 300px"></div>
 
       <div class="card" style="position: relative; max-width: 800px">
         <h1 class="page-title">O Mentor Brasileiro</h1>
         <br />
         <p class="page-subtitle">
           Conectando mentes, inspirando conquistas. Encontre seu mentor ou
-          mentorado ideal
+          mentorado ideal.
         </p>
-        <br />
-        <br />
-        <div class="send-email-form">
-          <input
-            class="email-input"
-            type="email"
-            placeholder="email"
-            name="email"
-            id="register-email-input"
-          />
-          <button class="submit-button" id="register-email-button">
-            Inscrever
-          </button>
-        </div>
 
         <div class="opacity-3"></div>
       </div>
     </section>
 
-    <section class="full-width-section flex-row">
+    <!-- Section: mentor case content -->
+    <section
+      id="section-mentor"
+      class="full-width-section flex-row-reverse mentor-section"
+    >
+      <img
+        class="section-image"
+        src="assets/smart-gyu-smiling.jpg"
+        alt="mentoring"
+      />
+
       <div class="card limit-description-width">
         <h1 class="section-title">Seja um mentor</h1>
         <br />
         <p class="section-subtitle">
-          Compartilhe sua sabedoria, impacte vidas - junte-se à nossa comunidade
-          de mentores e faça a diferença no mundo.
+          Compartilhe sua sabedoria, impacte vidas. Junte-se à nossa comunidade
+          e faça a diferença no mundo.
         </p>
       </div>
-
-      <img
-        class="section-image"
-        src="assets/mentor-smiling.jpg"
-        alt="mentoring"
-      />
     </section>
 
+    <section class="full-width-section flex-row mentor-section">
+      <div>
+        <h1 class="section-title">
+          Receba notificações de possíveis mentorados
+        </h1>
+        <br />
+        <p class="section-subtitle">A gente faz por você.</p>
+        <br />
+        <br />
+        <ol class="section-item-list">
+          <li class="section-item">
+            Cadastre seu perfil e telefone de contato.
+          </li>
+          <li class="section-item">
+            Receba notificações SMS ou WhatsApp quando alguém solicitar.
+          </li>
+          <li class="section-item">
+            Ofereça um tipo de atendimento ainda por whatsapp ou sms.
+          </li>
+          <li class="section-item">Você controla na palma da sua mão.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="full-width-section flex-row mentor-section">
+      <div>
+        <h1 class="section-title">
+          Faça encontros marcados, sem troca de contato pessoal
+        </h1>
+        <br />
+        <p class="section-subtitle">
+          Organizamos o local de encontro por você.
+        </p>
+        <br />
+        <br />
+        <ol class="section-item-list">
+          <li class="section-item">
+            Sugira uma lista de datas e horários para mentoria.
+          </li>
+          <li class="section-item">Mentorado escolhe.</li>
+          <li class="section-item">Você confirma.</li>
+          <li class="section-item">
+            Mentor e mentorado recebem o link para sala de video conferência.
+          </li>
+          <li class="section-item">Atenda online.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="full-width-section flex-row mentor-section">
+      <div>
+        <h1 class="section-title">Libere contato pessoal ao mentorado</h1>
+        <br />
+        <p class="section-subtitle">Tenha liberdade para decidir.</p>
+        <br />
+        <br />
+        <ol class="section-item-list">
+          <li class="section-item">
+            Você vai ser notificado de um possível mentorado.
+          </li>
+          <li class="section-item">
+            Você decide se quer liberar seu contato pessoal ou não.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="full-width-section flex-row mentor-section">
+      <div>
+        <h1 class="section-title">
+          Receba avaliações e divulgue em seu perfil
+        </h1>
+        <br />
+        <p class="section-subtitle">
+          Aprimore-se com insights de seus mentorados.
+        </p>
+        <br />
+        <br />
+        <ol class="section-item-list">
+          <li class="section-item">O mentorado envia uma avaliação.</li>
+          <li class="section-item">Você decide exibir em seu perfil ou não.</li>
+          <li class="section-item">Você decide receber avaliações ou não.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="full-width-section flex-row mentor-section">
+      <div>
+        <h1 class="section-title">Pagamento facilitado</h1>
+        <br />
+        <p class="section-subtitle">Você paga o valor justo.</p>
+        <br />
+        <br />
+        <ol class="section-item-list">
+          <li class="section-item">
+            Pague para divulgar seu perfil e atender em video conferências.
+          </li>
+          <li class="section-item">Os três primeiros meses são gratuitos.</li>
+          <li class="section-item">
+            O pagamento da sessão você acerta diretamente com o mentorado.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Section: mentored case content -->
     <section
-      class="full-width-section flex-row"
-      style="background-color: #fff7af"
+      id="section-mentored"
+      class="full-width-section flex-row mentored-section"
     >
       <img
         class="section-image"
@@ -71,13 +198,289 @@
 
       <div class="card limit-description-width">
         <h1 class="section-title">Encontre o seu mentor</h1>
+        <br />
         <p class="section-subtitle">
           Acelere seu crescimento pessoal e profissional. Encontre a mentoria
           perfeita para suas metas.
         </p>
       </div>
     </section>
+
+    <section class="full-width-section flex-row mentored-section">
+      <div>
+        <h1 class="section-title">Ferramenta de busca facilitada</h1>
+        <br />
+        <p class="section-subtitle">
+          A inteligência artificial trabalha por você.
+        </p>
+        <br />
+        <br />
+        <ul class="section-item-list">
+          <li class="section-item">Não temos tags e categorias de mentoria.</li>
+          <li class="section-item">
+            Você apresenta seu caso e buscamos mentores por você.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="full-width-section flex-row mentored-section">
+      <div>
+        <h1 class="section-title">Avalie e recomende</h1>
+        <br />
+        <p class="section-subtitle">Sua opinião importa.</p>
+        <br />
+        <br />
+        <ul class="section-item-list">
+          <li class="section-item">Sua avaliação sempre chega ao mentor.</li>
+          <li class="section-item">Você ajuda outros futuros mentorados.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="full-width-section flex-row mentored-section">
+      <div>
+        <h1 class="section-title">Pagamento simplificado</h1>
+        <br />
+        <p class="section-subtitle">Você também paga o valor justo.</p>
+        <br />
+        <br />
+        <ol class="section-item-list">
+          <li class="section-item">Acesso gratuito à plataforma.</li>
+          <li class="section-item">
+            O custo da sessão você acerta diretamente com o mentor.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Section: subscription content -->
+    <section id="section-subscription" class="full-width-section flex-row">
+      <div class="send-email-form">
+        <h1 class="section-title">Inscrição</h1>
+        <br />
+        <p class="section-subtitle">
+          Seja notificado quando a plataforma estiver pronta.
+        </p>
+        <br />
+
+        <div>
+          <input
+            class="email-input"
+            type="email"
+            placeholder="Email"
+            name="email"
+            id="subscription-email-input"
+            required
+          />
+
+          <div class="vertical-space-8"></div>
+
+          <textarea
+            class="comments-input"
+            type="text"
+            rows="3"
+            placeholder="Comentários (opcional)"
+            name="comments"
+            id="subscription-comments-input"
+          ></textarea>
+
+          <div class="vertical-space-8"></div>
+
+          <p class="section-item">Experiência</p>
+
+          <div class="vertical-space-8"></div>
+
+          <div class="checkbox-container">
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-experience"
+                id="option-highSchool"
+                value="highschool"
+              />
+              <label class="checkbox-item-label" for="option-highSchool"
+                >Ensino médio</label
+              >
+            </div>
+
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-experience"
+                id="option-college"
+                value="college"
+              />
+              <label class="checkbox-item-label" for="option-college"
+                >Faculdade</label
+              >
+            </div>
+
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-experience"
+                id="option-1-3-years-work"
+                value="junior"
+              />
+              <label class="checkbox-item-label" for="option-1-3-years-work"
+                >1-3 anos trabalhando</label
+              >
+            </div>
+
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-experience"
+                id="option-3-more-years-work"
+                value="senior"
+              />
+              <label class="checkbox-item-label" for="option-3-more-years-work"
+                >3 anos ou mais trabalhando</label
+              >
+            </div>
+          </div>
+
+          <br />
+
+          <p class="section-item">Área de atuação</p>
+
+          <div class="vertical-space-8"></div>
+
+          <div class="checkbox-container">
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-interest"
+                id="option-technology"
+                value="technology"
+              />
+              <label class="checkbox-item-label" for="option-technology"
+                >Tecnologia</label
+              >
+            </div>
+
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-interest"
+                id="option-business"
+                value="business"
+              />
+              <label class="checkbox-item-label" for="option-business"
+                >Negócios</label
+              >
+            </div>
+
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-interest"
+                id="option-entrepreneurship"
+                value="entrepreneurship"
+              />
+              <label class="checkbox-item-label" for="option-entrepreneurship"
+                >Empreendedorismo</label
+              >
+            </div>
+
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-interest"
+                id="option-carrer"
+                value="carrer"
+              />
+              <label class="checkbox-item-label" for="option-carrer"
+                >Carreira</label
+              >
+            </div>
+
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-interest"
+                id="option-exams"
+                value="exams"
+              />
+              <label class="checkbox-item-label" for="option-exams"
+                >Exames</label
+              >
+            </div>
+
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-interest"
+                id="option-sports"
+                value="sports"
+              />
+              <label class="checkbox-item-label" for="option-sports"
+                >Esportes</label
+              >
+            </div>
+
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-interest"
+                id="option-arts"
+                value="arts"
+              />
+              <label class="checkbox-item-label" for="option-arts">Artes</label>
+            </div>
+
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-interest"
+                id="option-law"
+                value="law"
+              />
+              <label class="checkbox-item-label" for="option-law"
+                >Direito</label
+              >
+            </div>
+
+            <div class="checkbox-item-wrapper">
+              <input
+                type="checkbox"
+                name="checkbox-option-interest"
+                id="option-health"
+                value="health"
+              />
+              <label class="checkbox-item-label" for="option-health"
+                >Saúde</label
+              >
+            </div>
+          </div>
+
+          <div class="vertical-space-8"></div>
+
+          <div class="vertical-space-8"></div>
+
+          <div class="vertical-space-8"></div>
+
+          <div class="vertical-space-8"></div>
+
+          <button
+            class="submit-button"
+            id="subscription-submit-button"
+            style="float: right"
+          >
+            Inscrever
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <section class="footer-section-central-column">
+        <p class="text-light">2023 - O Mentor Brasileiro</p>
+      </section>
+    </footer>
   </body>
 
+  <!-- Workings scripts: navigation and subscription api -->
   <script src="index.js"></script>
 </html>

@@ -10,12 +10,44 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model RegisteredEmail {
+model Subscription {
   id String @id @default(uuid())
 
   // required data
-  ip    String
-  value String @unique
+  ip       String
+  email    String  @unique
+  comments String?
 
   createdAt DateTime @default(now())
+
+  experiences Experience[]
+  interests   Interest[]
+}
+
+model Experience {
+  id    String @id @default(uuid())
+  value String @unique
+
+  subscriptions Subscription[]
+}
+
+model SubscriptionExperience {
+  experienceId   String
+  subscriptionId String
+
+  @@id([experienceId, subscriptionId])
+}
+
+model Interest {
+  id    String @id @default(uuid())
+  value String @unique
+
+  subscriptions Subscription[]
+}
+
+model SubscriptionInterest {
+  interestId     String
+  subscriptionId String
+
+  @@id([interestId, subscriptionId])
 }

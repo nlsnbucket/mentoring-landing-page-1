@@ -1,4 +1,4 @@
-import { InsertEmailPropsZodSchema} from "./InsertEmailPropsZodSchema"
+import { SubscribePropsZodSchema } from "./SubscribePropsZodSchema"
 
 describe("InsertEmailPropsZodSchema", () => {
   it.each([
@@ -10,7 +10,7 @@ describe("InsertEmailPropsZodSchema", () => {
     ],
   ])("should parse", (input) => {
     expect(() => {
-      InsertEmailPropsZodSchema.parse(input)
+      SubscribePropsZodSchema.parse(input)
     }).not.toThrow()
   })
 
@@ -29,7 +29,7 @@ describe("InsertEmailPropsZodSchema", () => {
     ],
   ])("should not parse", (input) => {
     expect(() => {
-      InsertEmailPropsZodSchema.parse(input)
+      SubscribePropsZodSchema.parse(input)
     }).toThrow()
   })
 })
