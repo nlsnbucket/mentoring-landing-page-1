@@ -2,13 +2,13 @@
 
 setup() {
     yarn
-    docker compose -f docker/docker-compose.yml up -d
+    docker compose up -d
     sleep 1
     npx prisma migrate dev
 }
 
 cleanup() {
-    docker compose -f docker/docker-compose.yml down
+    docker compose down
 }
 
 test() {

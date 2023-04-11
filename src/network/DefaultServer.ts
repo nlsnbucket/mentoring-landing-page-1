@@ -48,6 +48,7 @@ export class DefaultServer {
             status,
           })
         } catch (error) {
+          console.error(error)
           return response.status(400).json({
             error: "Failed to subscribe email.",
           })
